@@ -97,3 +97,28 @@ Heaps are most commonly used in **priority queues**, scheduling, and "Top K" pro
 To push a value into a max-heap:
 ```python
 heapq.heappush(heap, -val)
+```
+
+## 🧺 Set (Data Structure)
+
+A **set** is an unordered collection of unique elements.
+
+### 🔑 Key Features:
+- No duplicates allowed
+- Fast lookups, insertions, and deletions — average **O(1)** time
+- Often used to check for existence or to track unique values
+
+### 🧠 Example Use Cases:
+- Checking for duplicates in a string or array
+- Tracking visited nodes in graph problems
+- Sliding window problems (e.g., longest substring without repeating characters)
+
+### ✨ Python Example:
+```python
+s = set()
+s.add('a')
+s.add('b')
+s.add('a')  # duplicate, will be ignored
+print(s)    # Output: {'a', 'b'}
+```
+
