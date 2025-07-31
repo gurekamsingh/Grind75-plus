@@ -66,3 +66,34 @@ The possible subarrays are:
 - **Subset** = any combination of elements, order doesn't matter, can skip elements
 
 ---
+
+## ⛏️ Heaps
+
+A **heap** is a special type of binary tree (or array-based structure) used to quickly access the smallest or largest element. It supports fast insertions and deletions while maintaining a partial ordering of elements.
+
+Heaps are most commonly used in **priority queues**, scheduling, and "Top K" problems.
+
+---
+
+## 🔻 Min-Heap
+
+- The **smallest element** is always at the top (root).
+- Every parent node is **less than or equal to** its children.
+- In Python, the `heapq` module implements a **min-heap** by default.
+
+### 🧠 Use Case:
+- Quickly get the minimum element (like scheduling the shortest job first).
+- Maintain the top K **largest** elements by removing the smallest when the heap grows beyond size K.
+
+---
+
+## 🔺 Max-Heap
+
+- The **largest element** is at the top.
+- Every parent node is **greater than or equal to** its children.
+- Python does not have a built-in max-heap, but you can simulate it using **negative numbers**.
+
+### Example trick:
+To push a value into a max-heap:
+```python
+heapq.heappush(heap, -val)
