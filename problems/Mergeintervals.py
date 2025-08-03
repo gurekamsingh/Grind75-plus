@@ -20,7 +20,7 @@ def merge(intervals):
     return merged;
 
 
-arr = [[1,5],[2,4]]
+arr = [[1,3],[2,6],[8,10],[15,18]]
 print(merge(arr))  # Output: [[1, 6], [8, 10], [15, 18]]
 
 
