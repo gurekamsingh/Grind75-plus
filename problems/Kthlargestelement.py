@@ -20,3 +20,8 @@ nums = [2,3,1,5,4]
 k = 2    
 solution = Solution()
 print(solution.findKthLargest(nums, k))  # Output: 4
+
+# Time Complexity: O(n log k) due to heap operations
+# Space Complexity: O(k) for the heap storage
+# This approach uses a min-heap to keep track of the k largest elements seen so far.
+# The smallest element in the heap will be the kth largest element in the array.
