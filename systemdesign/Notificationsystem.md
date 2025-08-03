@@ -48,6 +48,7 @@ A system that sends real-time notifications (e.g., “Your order has shipped”)
          | 🔍 Monitoring Layer   |  <- Prometheus, Grafana, CloudWatch
          +----------------------+         
 
+```
 ## How It Works (Step-by-Step)
 
 ### 1. Ingest Layer (Producer)
