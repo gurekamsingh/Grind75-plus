@@ -28,37 +28,39 @@ A scalable and reliable system to upload, store, share, and download files—lik
 ## 🧱 High-Level Architecture
 
 +----------------------+
-| Client (Web/Mobile) |
+|  Client (Web/Mobile) |
 +----------------------+
-|
-v
-+----------------------+
-| API Gateway | <- /upload, /download, /share
-+----------------------+
-|
-+------+------+-----------+
-| | |
-v v v
-+--------+ +----------------+ +--------------------+
-| Auth | | File Metadata | | Chunk Tracker DB |
-|Service | | DB | | (for resumable |
-| (JWT) | | (Postgres) | | uploads) |
-+--------+ +----------------+ +--------------------+
-|
-v
-+----------------------+
-| File Upload Service |
-+----------------------+
-|
-v
-+----------------------+
-| Object Storage (S3) |
-+----------------------+
-|
-v
-+----------------------+
-| CDN (Downloads) |
-+----------------------+
+            |
+            v
+     +------------------+
+     |   API Gateway    |  <-- /upload, /download, /share
+     +------------------+
+            |
+            v
++---------+---------+---------+
+|      |           |         |
+v      v           v         v
++--------+   +----------------+   +--------------------+
+|  Auth  |   | File Metadata  |   |  Chunk Tracker DB  |
+|Service |   |      DB        |   | (for resumable     |
+|(JWT)   |   | (Postgres)     |   |  uploads)          |
++--------+   +----------------+   +--------------------+
+            \         |         /
+             \        |        /
+              \       v       /
+               +----------------------+
+               |  File Upload Service |
+               +----------------------+
+                        |
+                        v
+               +----------------------+
+               |  Object Storage (S3) |
+               +----------------------+
+                        |
+                        v
+               +----------------------+
+               |   CDN (Downloads)    |
+               +----------------------+
 
 
 ---
