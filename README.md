@@ -13,25 +13,11 @@ DSA-NOTES.md
 LICENSE
 README.md
 designpatterns/
-    Factorypattern.md
-    Factorypattern.py
-    Observerpattern.md
-    Observerpattern.py
-    strategypattern.md
-    strategypattern.py
+...
 problems/
-    Clonegraph.py
-    countingfrequency.py
-    Longestsubstring.py
-    LRUcache.md
-    LRUcache.py
-    Mergeintervals.py
-    Slidingwindow.py
-    Subarrsums_k.py
-    TopKfrequent.py
+...
 systemdesign/
-    Notificationsystem.md
-    Ratelimiter.md
+...
 ```
 
 ---
