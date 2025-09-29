@@ -102,4 +102,36 @@ class SecretSanta:
             return False, "Someone receives from multiple people"
         
         return True, "Valid assignment"
+    
+    # Example usage and testing
+if __name__ == "__main__":
+    ss = SecretSanta()
+    
+    # Test case 1: Basic example
+    people = ["Alice", "Bob", "Charlie", "Diana"]
+    print("People:", people)
+    print("\n--- Method 1: Random Shuffle ---")
+    assignments = ss.assign_secret_santa(people)
+    for giver, receiver in assignments.items():
+        print(f"{giver} → {receiver}")
+    
+    is_valid, msg = ss.verify_assignment(assignments)
+    print(f"\nValidation: {msg}")
+    
+    print("\n--- Method 2: Optimized Cycle ---")
+    assignments2 = ss.assign_optimized(people)
+    for giver, receiver in assignments2.items():
+        print(f"{giver} → {receiver}")
+    
+    is_valid, msg = ss.verify_assignment(assignments2)
+    print(f"\nValidation: {msg}")
+    
+    # Test case 2: Larger group
+    print("\n--- Larger Group Test ---")
+    large_group = [f"Person{i}" for i in range(10)]
+    assignments3 = ss.assign_optimized(large_group)
+    for giver, receiver in assignments3.items():
+        print(f"{giver} → {receiver}")
 
+# Time Complexity: O(n) on average for both methods
+# Space Complexity: O(n) for storing assignments
