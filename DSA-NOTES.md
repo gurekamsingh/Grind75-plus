@@ -121,4 +121,53 @@ s.add('b')
 s.add('a')  # duplicate, will be ignored
 print(s)    # Output: {'a', 'b'}
 ```
+## 📚 Stack
+
+A stack is a linear data structure that follows the LIFO (Last In, First Out) principle.
+The last element added is the first one to be removed.
+
+### 🧠 Real-life analogy:
+
+A stack of plates: You add (push) plates on top, and remove (pop) from the top.
+
+### 🔑 Operations:
+
+- Push: Add an element to the top
+
+- Pop: Remove the top element
+
+- Peek/Top: View the top element without removing it
+
+⏱️ Time Complexity:
+
+- Push → O(1)
+
+- Pop → O(1)
+
+- Peek → O(1)
+
+## 🛤️ Queue
+
+A queue is a linear data structure that follows the FIFO (First In, First Out) principle.
+The first element added is the first one to be removed.
+
+### 🧠 Real-life analogy:
+
+A line at a movie theater: People join at the back and are served from the front.
+
+### 🔑 Operations:
+
+- Enqueue: Add an element at the rear
+
+- Dequeue: Remove an element from the front
+
+- Peek/Front: View the first element without removing it
+
+⏱️ Time Complexity:
+
+- Enqueue → O(1)
+
+- Dequeue → O(1)
+
+- Peek → O(1)
 
