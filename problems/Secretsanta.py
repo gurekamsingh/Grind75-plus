@@ -9,9 +9,6 @@
 import random
 
 class SecretSanta:
-    """
-    Secret Santa assignment generator
-    """
     
     def assign_secret_santa(self, people):
         """
@@ -77,3 +74,32 @@ class SecretSanta:
             assignments[shuffled[i]] = shuffled[(i + 1) % n]
         
         return assignments
+    
+    def verify_assignment(self, assignments):
+        """
+        Verifies the Secret Santa assignment is valid
+        
+        Args:
+            assignments: Dictionary of giver -> receiver
+            
+        Returns:
+            Tuple (is_valid, error_message)
+        """
+        givers = set(assignments.keys())
+        receivers = set(assignments.values())
+        
+        # Check 1: Same people in both sets
+        if givers != receivers:
+            return False, "Givers and receivers don't match"
+        
+        # Check 2: No one assigned to themselves
+        for giver, receiver in assignments.items():
+            if giver == receiver:
+                return False, f"{giver} is assigned to themselves"
+        
+        # Check 3: Each person gives to exactly one person
+        if len(assignments) != len(set(assignments.values())):
+            return False, "Someone receives from multiple people"
+        
+        return True, "Valid assignment"
+
